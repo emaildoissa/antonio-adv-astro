@@ -17,7 +17,7 @@ const SITE_DATA = {
     titleHighlight: "O seu futuro tem amparo.",
     description: "Da defesa incansável dos seus direitos no ambiente corporativo ao planejamento cirúrgico da sua aposentadoria. Nossa precisão técnica protege cada etapa da sua vida profissional."
   },
-connection: {
+  connection: {
     titleStart: "A omissão que ",
     titleHighlight: "custa caro.",
     previdenciario: {
@@ -61,9 +61,9 @@ connection: {
   <main class="min-h-screen">
     {/* HEADER PREMIUM ESCURO */}
     <header class="bg-[#000000]/95 backdrop-blur-xl border-b border-[#c9a96e]/20 top-0 sticky z-50 w-full transition-all">
-      <nav class="flex justify-between items-center w-full px-8 py-5 max-w-screen-2xl mx-auto">
+      <nav class="flex justify-between items-center w-full px-6 md:px-8 py-4 md:py-5 max-w-screen-2xl mx-auto">
         <div class="flex items-center">
-          <img src="/logo.png" alt="Antonio Carlos Rosa Advocacia" class="h-24 w-auto object-contain" />
+          <img src="/logo.png" alt="Antonio Carlos Rosa Advocacia" class="h-10 md:h-24 w-auto object-contain" />
           <span class="sr-only">Antonio Carlos Rosa Advocacia</span>
         </div>
 
@@ -73,251 +73,229 @@ connection: {
           <a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#testimonials">Depoimentos</a>
         </div>
 
-        <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-7 py-3 font-bold rounded-full flex items-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-sm uppercase tracking-wide">
-          <span class="material-symbols-outlined text-xl">check_circle</span>
-          WhatsApp
+        {/* AJUSTE MOBILE: Botão mais compacto no celular */}
+        <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-4 md:px-7 py-2.5 md:py-3 font-bold rounded-full flex items-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-xs md:text-sm uppercase tracking-wide">
+          <span class="material-symbols-outlined text-lg md:text-xl">check_circle</span>
+          <span class="hidden sm:inline">WhatsApp</span>
+          <span class="sm:hidden">Falar</span>
         </a>
       </nav>
     </header>
 
     {/* HERO SECTION */}
-    <section class="relative min-h-[921px] flex items-center overflow-hidden pt-12">
-      <div class="max-w-screen-2xl mx-auto px-8 w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-        <div class="md:col-span-7 z-10">
-          <span class="text-sm md:text-base uppercase tracking-[0.2em] text-primary mb-6 block font-medium">
+    {/* AJUSTE MOBILE: min-h e paddings ajustados */}
+    <section class="relative min-h-[85vh] md:min-h-[921px] flex items-center overflow-hidden pt-16 md:pt-12 pb-16 md:pb-0">
+      <div class="max-w-screen-2xl mx-auto px-6 md:px-8 w-full grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
+        <div class="md:col-span-7 z-10 text-center md:text-left mt-8 md:mt-0">
+          <span class="text-xs md:text-base uppercase tracking-[0.2em] text-primary mb-4 md:mb-6 block font-medium">
             {SITE_DATA.hero.tagline}
           </span>
-          <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-8 tracking-tight text-[#1a1c1c]">
+          {/* AJUSTE MOBILE: Tamanho da fonte menor no celular (text-4xl) */}
+          <h1 class="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-6 md:mb-8 tracking-tight text-[#1a1c1c]">
             {SITE_DATA.hero.titleStart}
             <span class="italic font-normal">{SITE_DATA.hero.titleHighlight}</span>
           </h1>
-          <p class="text-xl md:text-2xl text-[#5f5e5e] max-w-xl mb-12 font-light leading-relaxed">
+          <p class="text-lg md:text-2xl text-[#5f5e5e] max-w-xl mb-8 md:mb-12 font-light leading-relaxed mx-auto md:mx-0">
             {SITE_DATA.hero.description}
           </p>
-          <div class="flex flex-col sm:flex-row gap-6">
-            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-primary text-white px-10 py-5 text-lg font-medium inline-flex items-center justify-center gap-3 hover:bg-primary-container transition-all group rounded-sm">
+          <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center md:justify-start">
+            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-primary text-white px-8 md:px-10 py-4 md:py-5 text-base md:text-lg font-medium inline-flex items-center justify-center gap-3 hover:bg-primary-container transition-all group rounded-sm w-full sm:w-auto">
               <span class="material-symbols-outlined text-2xl text-[#25D366]">check_circle</span>
               Falar com Especialista
-              <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_right_alt</span>
+              <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform hidden md:inline">arrow_right_alt</span>
             </a>
           </div>
         </div>
-        <div class="md:col-span-5 relative">
-          <div class="aspect-[4/5] bg-surface-container relative overflow-hidden">
-            <img alt="Ambiente Jurídico Premium" class="w-full h-full object-cover grayscale contrast-125 opacity-90" src="/hero.jpeg">
-            <div class="absolute inset-0 bg-gradient-to-t from-[#f9f9f9] via-transparent to-transparent"></div>
+        <div class="md:col-span-5 relative mt-8 md:mt-0">
+          <div class="aspect-[4/5] bg-surface-container relative overflow-hidden rounded-sm md:rounded-none">
+            <img alt="Ambiente Jurídico Premium" class="w-full h-full object-cover grayscale contrast-125 opacity-90" src="/hero.jpeg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#f9f9f9] md:via-transparent to-transparent"></div>
           </div>
-          <div class="absolute -left-6 top-1/4 w-px h-1/2 bg-primary-container"></div>
-          <div class="absolute -bottom-6 right-12 h-px w-1/2 bg-primary-container"></div>
+          <div class="hidden md:block absolute -left-6 top-1/4 w-px h-1/2 bg-primary-container"></div>
+          <div class="hidden md:block absolute -bottom-6 right-12 h-px w-1/2 bg-primary-container"></div>
         </div>
       </div>
     </section>
 
-{/* CONNECTION SECTION - Layout Empilhado (Título acima, Colunas abaixo) */}
-    <section class="py-24 md:py-40 bg-surface-container-low">
-      <div class="max-w-screen-2xl mx-auto px-8">
-        
-        {/* PARTE SUPERIOR: Título e Conclusão (O Manifesto) */}
-        <div class="max-w-4xl mb-16 md:mb-24 space-y-8">
-          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl text-[#1a1c1c] leading-tight">
+    {/* CONNECTION SECTION */}
+    <section class="py-20 md:py-40 bg-surface-container-low">
+      <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+        <div class="max-w-4xl mb-12 md:mb-24 space-y-6 md:space-y-8 text-center md:text-left">
+          <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#1a1c1c] leading-tight">
             {SITE_DATA.connection.titleStart} <span class="text-primary italic font-headline">{SITE_DATA.connection.titleHighlight}</span>
           </h2>
-          <div class="w-20 h-1 bg-primary-container"></div>
-          <p class="text-xl md:text-2xl text-on-surface-variant leading-relaxed font-light">
+          <div class="w-16 md:w-20 h-1 bg-primary-container mx-auto md:mx-0"></div>
+          <p class="text-lg md:text-2xl text-on-surface-variant leading-relaxed font-light text-justify md:text-left">
             {SITE_DATA.connection.conclusion}
           </p>
         </div>
 
-        {/* PARTE INFERIOR: Duas Colunas (Previdenciário e Trabalhista) */}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 pt-12 border-t border-primary-container/20">
-          
-          {/* Bloco Previdenciário */}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 pt-12 md:pt-16 border-t border-primary-container/20">
           <div class="space-y-4">
-            <div class="flex items-center gap-4 mb-6">
+            <div class="flex items-center gap-4 mb-4 md:mb-6">
               <span class="material-symbols-outlined text-primary text-3xl">account_balance</span>
               <h3 class="font-headline text-2xl text-[#1a1c1c]">{SITE_DATA.connection.previdenciario.title}</h3>
             </div>
-            <p class="text-on-surface-variant text-lg leading-relaxed text-justify">
+            <p class="text-on-surface-variant text-base md:text-lg leading-relaxed text-justify">
               {SITE_DATA.connection.previdenciario.text}
             </p>
           </div>
 
-          {/* Bloco Trabalhista */}
           <div class="space-y-4">
-            <div class="flex items-center gap-4 mb-6">
+            <div class="flex items-center gap-4 mb-4 md:mb-6">
               <span class="material-symbols-outlined text-primary text-3xl">gavel</span>
               <h3 class="font-headline text-2xl text-[#1a1c1c]">{SITE_DATA.connection.trabalhista.title}</h3>
             </div>
-            <p class="text-on-surface-variant text-lg leading-relaxed text-justify">
+            <p class="text-on-surface-variant text-base md:text-lg leading-relaxed text-justify">
               {SITE_DATA.connection.trabalhista.text}
             </p>
           </div>
-
         </div>
-
       </div>
     </section>
 
     {/* AUTHORITY SECTION */}
-    <section class="py-24 md:py-40 bg-[#0B0B0B] text-[#f9f9f9]" id="authority">
-      <div class="max-w-screen-2xl mx-auto px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 items-center">
-          <div class="md:col-span-1 border-r border-primary-container/20 pr-8">
-            <div class="text-7xl font-headline text-primary-container mb-4">{SITE_DATA.authority[0].value}</div>
-            <p class="text-sm uppercase tracking-[0.2em] text-[#e2e2e2]">{SITE_DATA.authority[0].label}</p>
+    <section class="py-20 md:py-40 bg-[#0B0B0B] text-[#f9f9f9]" id="authority">
+         {/* <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 items-center text-center md:text-left">
+          
+          <div class="md:col-span-1 border-b md:border-b-0 md:border-r border-primary-container/20 pb-10 md:pb-0 md:pr-8">
+            <div class="text-6xl md:text-7xl font-headline text-primary-container mb-4">{SITE_DATA.authority[0].value}</div>
+            <p class="text-xs md:text-sm uppercase tracking-[0.2em] text-[#e2e2e2] leading-relaxed">{SITE_DATA.authority[0].label}</p>
           </div>
-          <div class="md:col-span-1 md:px-12">
-            <div class="text-7xl font-headline text-primary-container mb-4">{SITE_DATA.authority[1].value}</div>
-            <p class="text-sm uppercase tracking-[0.2em] text-[#e2e2e2]">{SITE_DATA.authority[1].label}</p>
+          <div class="md:col-span-1 border-b md:border-b-0 md:border-r border-primary-container/20 pb-10 md:pb-0 md:px-8">
+            <div class="text-6xl md:text-7xl font-headline text-primary-container mb-4">{SITE_DATA.authority[1].value}</div>
+            <p class="text-xs md:text-sm uppercase tracking-[0.2em] text-[#e2e2e2] leading-relaxed">{SITE_DATA.authority[1].label}</p>
           </div>
-          <div class="md:col-span-1 md:pl-12">
-            <h3 class="font-headline text-3xl mb-6 italic">Autoridade que se traduz em resultados reais.</h3>
-            <p class="text-[#e2e2e2]/60 font-light">Atuação estratégica focada em casos complexos e planejamento previdenciário de alto valor.</p>
+          <div class="md:col-span-1 md:pl-12 pt-4 md:pt-0">
+            <h3 class="font-headline text-2xl md:text-3xl mb-4 md:mb-6 italic">Autoridade que se traduz em resultados reais.</h3>
+            <p class="text-[#e2e2e2]/60 font-light text-sm md:text-base">Atuação estratégica focada em casos complexos e planejamento previdenciário de alto valor.</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
 
-    {/* === NOVA BENTO GRID SECTION === */}
-    <section class="py-24 md:py-40" id="areas">
-      <div class="max-w-screen-2xl mx-auto px-8">
+    {/* BENTO GRID SECTION */}
+    <section class="py-20 md:py-40" id="areas">
+      <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
         
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div class="max-w-2xl">
-            <span class="text-secondary font-body text-xs uppercase tracking-[0.3em] block mb-4">Especialidades</span>
-            <h2 class="font-headline text-5xl md:text-6xl text-[#1a1c1c] tracking-tight leading-tight">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-8 text-center md:text-left">
+          <div class="max-w-2xl w-full">
+            <span class="text-secondary font-body text-xs uppercase tracking-[0.3em] block mb-3 md:mb-4">Especialidades</span>
+            <h2 class="font-headline text-4xl sm:text-5xl md:text-6xl text-[#1a1c1c] tracking-tight leading-tight">
               Estratégias para uma vida <span class="italic font-headline">sem renúncias</span>
             </h2>
           </div>
-          <div class="md:max-w-xs text-right">
+          <div class="md:max-w-xs text-center md:text-right w-full">
             <p class="text-[#5f5e5e] text-sm leading-relaxed mb-6">Navegando pelas complexidades da lei com precisão técnica e autoridade inabalável.</p>
-            <div class="h-[1px] bg-outline-variant w-full opacity-50"></div>
+            <div class="h-[1px] bg-outline-variant w-full md:w-auto opacity-50"></div>
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[minmax(180px,auto)] md:grid-flow-dense">
           
-          {/* 1. Seguro Desemprego (Destaque Principal com Animação de Texto do Instagram) */}
-          <div class="md:col-span-8 md:row-span-3 bg-[#0B0B0B] relative overflow-hidden group rounded-sm shadow-sm flex flex-col justify-end cursor-pointer">
-            
-            {/* === IMAGEM DE FUNDO (Continua visível, mas escurece no Hover) === */}
+          <div class="md:col-span-8 md:row-span-3 bg-[#0B0B0B] relative overflow-hidden group rounded-sm shadow-sm flex flex-col justify-end cursor-pointer min-h-[350px] md:min-h-0">
             <div class="absolute inset-0 z-0 transition-all duration-700 group-hover:scale-105 group-hover:opacity-20">
               <img alt="Seguro Desemprego" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80"/>
             </div>
-
-            {/* Gradient Overlay Inicial (Fica mais escuro no Hover) */}
             <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/90 via-[#0B0B0B]/40 to-transparent z-10 transition-colors duration-500 group-hover:bg-[#0B0B0B]/95"></div>
-
-            {/* === PARTE DA FRENTE (Visível normalmente, Fica Transparente no Hover) === */}
-            <div class="relative z-20 p-8 md:p-10 transition-opacity duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
-              <span class="text-xs uppercase tracking-[0.2em] text-[#c9a96e] mb-2 font-bold">Direito Trabalhista</span>
-              <h3 class="font-headline text-4xl mb-4 italic text-white">Seguro Desemprego</h3>
-              <p class="max-w-md text-[#e2e2e2] font-light leading-relaxed mb-6">Orientação profissional para garantir sua transição com dignidade e segurança jurídica.</p>
-             
+            
+            <div class="relative z-20 p-6 md:p-10 transition-opacity duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
+              <span class="text-[0.65rem] md:text-xs uppercase tracking-[0.2em] text-[#c9a96e] mb-2 font-bold block">Direito Trabalhista</span>
+              <h3 class="font-headline text-3xl md:text-4xl mb-3 md:mb-4 italic text-white">Seguro Desemprego</h3>
+              <p class="max-w-md text-[#e2e2e2] font-light leading-relaxed mb-6 text-sm md:text-base">Orientação profissional para garantir sua transição com dignidade e segurança jurídica.</p>
+              <div class="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#c9a96e] group-hover:gap-4 transition-all w-fit">
+                Consultar Especialista <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              </div>
             </div>
 
-            {/* === PARTE DE TRÁS (Desliza para cima no Hover) === */}
-            <div class="absolute inset-0 text-white p-8 md:p-12 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-30 flex flex-col justify-center">
-              <div class="flex items-center gap-4 mb-6">
-                 <div class="w-16 h-px bg-[#c9a96e]/50"></div>
-                 <span class="text-[#c9a96e] font-headline text-2xl italic">O que você precisa saber?</span>
+            <div class="absolute inset-0 text-white p-6 md:p-12 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-30 flex flex-col justify-center">
+              <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                 <div class="w-8 md:w-16 h-px bg-[#c9a96e]/50"></div>
+                 <span class="text-[#c9a96e] font-headline text-xl md:text-2xl italic">O que você precisa saber?</span>
               </div>
               
-              <div class="space-y-5 font-light text-[0.9rem] md:text-base leading-relaxed text-[#e2e2e2] max-w-3xl">
+              <div class="space-y-3 md:space-y-5 font-light text-[0.85rem] md:text-base leading-relaxed text-[#e2e2e2] max-w-3xl">
                 <p><strong class="text-white font-medium">Assistência Financeira Temporária.</strong> Um benefício fundamental da seguridade social para garantir a sua subsistência provisória.</p>
-                
-                {/* Citação em destaque */}
-                <div class="pl-4 border-l-2 border-[#c9a96e] text-[#c9a96e] font-medium text-xl font-headline italic py-1">
-                  Direito garantido ao trabalhador demitido sem justa causa ou despedido de forma indireta.
+                <div class="pl-3 md:pl-4 border-l-2 border-[#c9a96e] text-[#c9a96e] font-medium text-lg md:text-xl font-headline italic py-1">
+                  Direito garantido ao trabalhador demitido sem justa causa.
                 </div>
-                
-                <p>O objetivo é prover manutenção digna enquanto você foca na busca por uma nova recolocação profissional no mercado.</p>
+                <p class="hidden sm:block">O objetivo é prover manutenção digna enquanto você foca na busca por uma nova recolocação profissional no mercado.</p>
               </div>
 
-              {/* Botão de Ação dentro do Reveal */}
-              <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-7 py-3 font-bold rounded-full flex items-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-sm uppercase tracking-wide w-fit mt-10">
-                <span class="material-symbols-outlined text-xl">check_circle</span>
-                Falar com Especialista agora
+              <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-5 md:px-7 py-2.5 md:py-3 font-bold rounded-sm flex items-center justify-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-[0.7rem] md:text-sm uppercase tracking-wide w-full md:w-fit mt-6 md:mt-10">
+                <span class="material-symbols-outlined text-lg md:text-xl">check_circle</span>
+                Falar com Especialista
               </a>
             </div>
-
           </div>
 
-          <div class="md:col-span-4 md:row-span-4 bg-primary text-white p-8 flex flex-col justify-between group rounded-sm shadow-sm">
-            <div class="space-y-6">
-              <div class="w-12 h-1 bg-[#c9a96e]"></div>
-              <h3 class="font-headline text-3xl italic">Aposentadoria</h3>
+          <div class="md:col-span-4 md:row-span-4 bg-primary text-white p-6 md:p-8 flex flex-col justify-between group rounded-sm shadow-sm min-h-[400px]">
+            <div class="space-y-4 md:space-y-6">
+              <div class="w-10 md:w-12 h-1 bg-[#c9a96e]"></div>
+              <h3 class="font-headline text-2xl md:text-3xl italic">Aposentadoria</h3>
               <p class="text-white/80 leading-relaxed font-light text-sm">Planejando o legado da sua jornada profissional através de consultoria estratégica.</p>
             </div>
-            <div class="mt-8 relative h-64 overflow-hidden rounded-sm">
+            <div class="mt-8 relative h-48 md:h-64 overflow-hidden rounded-sm">
               <img alt="Aposentadoria" class="w-full h-full object-cover opacity-40 group-hover:opacity-80 grayscale transition-opacity duration-500" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80"/>
               <div class="absolute inset-0 border border-white/10"></div>
             </div>
-            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="mt-6 text-xs uppercase tracking-[0.2em] text-[#c9a96e] border-b border-[#c9a96e]/30 self-start pb-1 hover:text-white transition-colors">Ver Estratégias</a>
+            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="mt-6 text-[0.65rem] md:text-xs uppercase tracking-[0.2em] text-[#c9a96e] border-b border-[#c9a96e]/30 self-start pb-1 hover:text-white transition-colors">Ver Estratégias</a>
           </div>
 
-          <div class="md:col-span-4 md:row-span-2 bg-white p-8 flex flex-col justify-center border-l-4 border-l-primary shadow-sm rounded-sm">
-            <span class="material-symbols-outlined text-primary mb-4 text-3xl">family_restroom</span>
-            <h3 class="font-headline text-2xl text-[#1a1c1c] mb-3">Pensão por Morte</h3>
-            <p class="text-[#5f5e5e] text-sm leading-relaxed">Proteção essencial para o núcleo familiar durante períodos de transição e luto.</p>
-            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="mt-6 material-symbols-outlined text-primary hover:text-[#c9a96e] transition-colors self-start">add_circle</a>
+          <div class="md:col-span-4 md:row-span-2 bg-white p-6 md:p-8 flex flex-col justify-center border-l-4 border-l-primary shadow-sm rounded-sm">
+            <span class="material-symbols-outlined text-primary mb-3 md:mb-4 text-2xl md:text-3xl">family_restroom</span>
+            <h3 class="font-headline text-xl md:text-2xl text-[#1a1c1c] mb-2 md:mb-3">Pensão por Morte</h3>
+            <p class="text-[#5f5e5e] text-xs md:text-sm leading-relaxed">Proteção essencial para o núcleo familiar durante períodos de transição e luto.</p>
+            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="mt-4 md:mt-6 material-symbols-outlined text-primary hover:text-[#c9a96e] transition-colors self-start">add_circle</a>
           </div>
 
-          <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="md:col-span-4 md:row-span-2 bg-[#0B0B0B] text-white p-8 flex flex-col justify-between group cursor-pointer rounded-sm shadow-sm hover:bg-[#1a1c1c] transition-colors">
+          <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="md:col-span-4 md:row-span-2 bg-[#0B0B0B] text-white p-6 md:p-8 flex flex-col justify-between group cursor-pointer rounded-sm shadow-sm hover:bg-[#1a1c1c] transition-colors">
             <div>
-              <h3 class="font-headline text-2xl mb-3 text-white">Assédio no Trabalho</h3>
-              <p class="text-[#e2e2e2]/80 text-sm leading-relaxed">Preservando a dignidade e a saúde mental no ambiente profissional.</p>
+              <h3 class="font-headline text-xl md:text-2xl mb-2 md:mb-3 text-white">Assédio no Trabalho</h3>
+              <p class="text-[#e2e2e2]/80 text-xs md:text-sm leading-relaxed">Preservando a dignidade e a saúde mental no ambiente profissional.</p>
             </div>
             <div class="flex items-center justify-between mt-6">
-              <span class="text-[0.65rem] uppercase tracking-widest text-[#ba1a1a] font-bold flex items-center gap-1 bg-white/10 px-2 py-1 rounded">
-                <span class="material-symbols-outlined text-sm">priority_high</span> Advocacia Urgente
+              <span class="text-[0.6rem] md:text-[0.65rem] uppercase tracking-widest text-[#ba1a1a] font-bold flex items-center gap-1 bg-white/10 px-2 py-1 rounded">
+                <span class="material-symbols-outlined text-xs md:text-sm">priority_high</span> Advocacia Urgente
               </span>
               <span class="material-symbols-outlined text-[#c9a96e] group-hover:translate-x-1 transition-transform">east</span>
             </div>
           </a>
 
-          <div class="md:col-span-5 md:row-span-2 bg-white flex overflow-hidden shadow-sm rounded-sm border border-outline-variant/30">
-            <div class="w-2/5 h-full">
+          {/* AJUSTE MOBILE: flex-col no celular para a imagem não esmagar o texto */}
+          <div class="md:col-span-5 md:row-span-2 bg-white flex flex-col md:flex-row overflow-hidden shadow-sm rounded-sm border border-outline-variant/30">
+            <div class="w-full md:w-2/5 h-48 md:h-full">
               <img alt="Doença Ocupacional" class="w-full h-full object-cover grayscale" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80"/>
             </div>
-            <div class="w-3/5 p-6 md:p-8 flex flex-col justify-center">
-              <h3 class="font-headline text-2xl text-[#1a1c1c] mb-2">Doença Ocupacional</h3>
-              <p class="text-[#5f5e5e] text-sm leading-relaxed">Suporte legal para recuperação da saúde e reconhecimento de direitos.</p>
+            <div class="w-full md:w-3/5 p-6 md:p-8 flex flex-col justify-center">
+              <h3 class="font-headline text-xl md:text-2xl text-[#1a1c1c] mb-2">Doença Ocupacional</h3>
+              <p class="text-[#5f5e5e] text-xs md:text-sm leading-relaxed">Suporte legal para recuperação da saúde e reconhecimento de direitos.</p>
               <div class="mt-4 flex gap-2">
                 <span class="bg-[#f3f3f3] text-primary px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-tighter">Direito à Saúde</span>
               </div>
             </div>
           </div>
 
-          {/* 6. Desvio de Função (Com Animação de Texto do Instagram) */}
-          <div class="md:col-span-3 md:row-span-2 bg-[#c9a96e] relative overflow-hidden group rounded-sm shadow-sm flex flex-col justify-between cursor-pointer">
-            
-            {/* === PARTE DA FRENTE (Visível normalmente) === */}
-            <div class="p-8 h-full flex flex-col justify-between transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
+          <div class="md:col-span-3 md:row-span-2 bg-[#c9a96e] relative overflow-hidden group rounded-sm shadow-sm flex flex-col justify-between cursor-pointer min-h-[200px]">
+            <div class="p-6 md:p-8 h-full flex flex-col justify-between transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
               <div>
                 <div class="h-1 w-full bg-[#0B0B0B]/20"></div>
-                <h3 class="font-headline text-2xl text-[#0B0B0B] mb-2 mt-4">Desvio de Função</h3>
-                <p class="text-[#0B0B0B]/80 text-xs leading-relaxed uppercase tracking-wider italic font-medium">Garantindo o alinhamento de funções e remuneração.</p>
+                <h3 class="font-headline text-xl md:text-2xl text-[#0B0B0B] mb-2 mt-4">Desvio de Função</h3>
+                <p class="text-[#0B0B0B]/80 text-[0.65rem] md:text-xs leading-relaxed uppercase tracking-wider italic font-medium">Garantindo o alinhamento de funções.</p>
               </div>
-              <div class="text-[#0B0B0B]/20 text-5xl font-headline text-right italic font-bold mt-2">06</div>
+              <div class="text-[#0B0B0B]/20 text-4xl md:text-5xl font-headline text-right italic font-bold mt-2">06</div>
             </div>
 
-            {/* === PARTE DE TRÁS (Desliza para cima no Hover) === */}
             <div class="absolute inset-0 bg-[#0B0B0B] text-white p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-10 flex flex-col justify-center">
-              <span class="text-[#c9a96e] font-headline text-lg mb-3">O que diz a Lei?</span>
-              
-              <div class="space-y-3 font-light text-[0.8rem] leading-relaxed text-[#e2e2e2]">
-                <p>Mudança de atividade sem acordo prévio ou com prejuízo salarial.</p>
-                
-                {/* Citação em destaque */}
-                <div class="pl-3 border-l-2 border-[#c9a96e] text-[#c9a96e] italic">
-                  “É vedada à contratante a utilização dos trabalhadores em atividades distintas daquelas que foram objeto do contrato” <span class="block text-[0.65rem] mt-1 text-white/50">(Lei 13.429/17)</span>
+              <span class="text-[#c9a96e] font-headline text-base md:text-lg mb-2 md:mb-3">O que diz a Lei?</span>
+              <div class="space-y-2 md:space-y-3 font-light text-[0.75rem] md:text-[0.8rem] leading-relaxed text-[#e2e2e2]">
+                <div class="pl-2 md:pl-3 border-l-2 border-[#c9a96e] text-[#c9a96e] italic">
+                  “É vedada à contratante a utilização dos trabalhadores em atividades distintas daquelas que foram objeto do contrato”
                 </div>
-                
-                <p>A prática sem consentimento (Art. 468, CLT) é ilegal e pode gerar <strong class="text-white font-medium">indenização ao empregado.</strong></p>
+                <p>A prática (Art. 468, CLT) é ilegal e pode gerar <strong class="text-white font-medium">indenização.</strong></p>
               </div>
             </div>
-
           </div>
 
         </div>
@@ -325,49 +303,50 @@ connection: {
     </section>
 
     {/* TESTIMONIALS SECTION */}
-    <section class="py-24 md:py-40 bg-surface-container" id="testimonials">
-      <div class="max-w-screen-2xl mx-auto px-8">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-          <div class="md:col-span-4">
-            <h2 class="font-headline text-4xl text-[#1a1c1c] mb-8">Palavras de quem <span class="italic font-headline">confiou</span> seu tempo a nós.</h2>
+    <section class="py-20 md:py-40 bg-surface-container" id="testimonials">
+      {/*  <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+          <div class="md:col-span-4 text-center md:text-left">
+            <h2 class="font-headline text-3xl md:text-4xl text-[#1a1c1c] mb-6 md:mb-8">Palavras de quem <span class="italic font-headline">confiou</span> seu tempo a nós.</h2>
+            <div class="w-12 h-1 bg-outline-variant mx-auto md:mx-0 mb-8 md:hidden"></div>
           </div>
-          <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
             {SITE_DATA.testimonials.map((testimonial) => (
-              <div class="space-y-6">
-                <p class="font-headline text-xl italic text-on-surface-variant leading-relaxed">
+              <div class="space-y-4 md:space-y-6 text-center md:text-left">
+                <p class="font-headline text-lg md:text-xl italic text-on-surface-variant leading-relaxed">
                   {testimonial.text}
                 </p>
-                <div class="pt-4 border-t border-outline-variant w-12"></div>
-                <p class="text-sm uppercase tracking-widest text-primary font-semibold">
-                  {testimonial.author} — <span class="font-light text-[#1a1c1c]/60 italic lowercase">{testimonial.role}</span>
+                <div class="pt-4 border-t border-outline-variant w-12 mx-auto md:mx-0"></div>
+                <p class="text-xs md:text-sm uppercase tracking-widest text-primary font-semibold">
+                  {testimonial.author} <br class="sm:hidden" /> <span class="font-light text-[#1a1c1c]/60 italic lowercase sm:before:content-['—_']">{testimonial.role}</span>
                 </p>
               </div>
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
 
     {/* CTA SECTION */}
-    <section class="py-24 md:py-40 relative" id="contact">
-      <div class="max-w-screen-2xl mx-auto px-8">
-        <div class="bg-[#0B0B0B] p-12 md:p-24 relative overflow-hidden rounded-sm shadow-md">
-          <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 -mr-32 -mt-32 rotate-45"></div>
-          <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+    <section class="py-20 md:py-40 relative" id="contact">
+      <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
+        <div class="bg-[#0B0B0B] p-8 md:p-24 relative overflow-hidden rounded-sm shadow-md text-center md:text-left">
+          <div class="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-primary/10 -mr-24 md:-mr-32 -mt-24 md:-mt-32 rotate-45"></div>
+          <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12">
             <div class="max-w-2xl">
-              <h2 class="font-headline text-4xl md:text-6xl text-[#f9f9f9] mb-6">
+              <h2 class="font-headline text-3xl md:text-6xl text-[#f9f9f9] mb-4 md:mb-6">
                 {SITE_DATA.cta.titleStart} <span class="text-primary-container italic font-headline">{SITE_DATA.cta.titleHighlight}</span>
               </h2>
-              <p class="text-[#e2e2e2]/70 text-lg md:text-xl font-light mb-4">
+              <p class="text-[#e2e2e2]/70 text-base md:text-xl font-light mb-6 md:mb-8">
                 {SITE_DATA.cta.description}
               </p>
-              <a href={SITE_DATA.contact.emailLink} class="text-primary-container text-lg md:text-xl flex items-center gap-3 hover:text-white transition-colors font-medium">
-                <span class="material-symbols-outlined text-2xl">mail</span>
-                {SITE_DATA.contact.email}
+              <a href={SITE_DATA.contact.emailLink} class="text-primary-container text-base md:text-xl flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors font-medium">
+                <span class="material-symbols-outlined text-xl md:text-2xl">mail</span>
+                <span class="truncate">{SITE_DATA.contact.email}</span>
               </a>
             </div>
-            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-12 py-6 text-xl font-bold hover:bg-[#20ba5a] transition-all active:scale-95 text-center min-w-[300px] flex items-center justify-center gap-3 rounded-sm">
-              <span class="material-symbols-outlined text-3xl">check_circle</span>
+            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-8 md:px-12 py-5 md:py-6 text-base md:text-xl font-bold hover:bg-[#20ba5a] transition-all active:scale-95 text-center w-full md:min-w-[300px] flex items-center justify-center gap-3 rounded-sm">
+              <span class="material-symbols-outlined text-2xl md:text-3xl">check_circle</span>
               Agendar via WhatsApp
             </a>
           </div>
@@ -375,43 +354,38 @@ connection: {
       </div>
     </section>
 
-    {/* FOOTER PREMIUM */}
-    <footer class="bg-[#0B0B0B] w-full pt-20 pb-10 border-t border-[#c9a96e]/20">
-      <div class="max-w-screen-2xl mx-auto px-8">
+    {/* FOOTER */}
+    <footer class="bg-[#0B0B0B] w-full pt-16 md:pt-20 pb-8 md:pb-10 border-t border-[#c9a96e]/20">
+      <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
         
-        {/* Colunas do Rodapé */}
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-16 text-center md:text-left">
           
-          {/* Coluna 1: Logo e Descrição */}
-          <div class="md:col-span-5 flex flex-col items-start space-y-6">
-            <img src="/logo.png" alt="Antonio Carlos Rosa Advocacia" class="h-16 w-auto object-contain opacity-90" />
-            <p class="text-[#e2e2e2]/60 text-sm leading-relaxed font-light max-w-sm">
+          <div class="md:col-span-5 flex flex-col items-center md:items-start space-y-4 md:space-y-6">
+            <img src="/logo.png" alt="Antonio Carlos Rosa Advocacia" class="h-12 md:h-16 w-auto object-contain opacity-90" />
+            <p class="text-[#e2e2e2]/60 text-xs md:text-sm leading-relaxed font-light max-w-sm">
               Excelência em Advocacia Trabalhista e Previdenciária. Protegendo a sua história de trabalho e garantindo a segurança do seu futuro.
             </p>
           </div>
 
-          {/* Coluna 2: Contato Direto */}
-          <div class="md:col-span-4 flex flex-col space-y-6">
-            <h4 class="font-headline text-[#c9a96e] text-xl italic">Atendimento</h4>
-            <div class="flex flex-col space-y-4 text-[#F5F5F5]/80 font-medium">
-              <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-[#25D366] transition-colors w-fit">
-                <span class="material-symbols-outlined text-[#25D366] text-xl">check_circle</span>
+          <div class="md:col-span-4 flex flex-col items-center md:items-start space-y-4 md:space-y-6">
+            <h4 class="font-headline text-[#c9a96e] text-lg md:text-xl italic">Atendimento</h4>
+            <div class="flex flex-col items-center md:items-start space-y-3 md:space-y-4 text-[#F5F5F5]/80 font-medium text-sm md:text-base">
+              <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 md:gap-3 hover:text-[#25D366] transition-colors w-fit">
+                <span class="material-symbols-outlined text-[#25D366] text-lg md:text-xl">check_circle</span>
                 {SITE_DATA.contact.whatsapp}
               </a>
-              <a href={SITE_DATA.contact.emailLink} class="flex items-center gap-3 hover:text-[#c9a96e] transition-colors w-fit">
-                <span class="material-symbols-outlined text-[#c9a96e] text-xl">mail</span>
-                {SITE_DATA.contact.email}
+              <a href={SITE_DATA.contact.emailLink} class="flex items-center gap-2 md:gap-3 hover:text-[#c9a96e] transition-colors w-fit">
+                <span class="material-symbols-outlined text-[#c9a96e] text-lg md:text-xl">mail</span>
+                <span class="truncate max-w-[200px] sm:max-w-none">{SITE_DATA.contact.email}</span>
               </a>
             </div>
           </div>
 
-          {/* Coluna 3: Redes Sociais */}
-          <div class="md:col-span-3 flex flex-col space-y-6">
-            <h4 class="font-headline text-[#c9a96e] text-xl italic">Acompanhe</h4>
-            <div class="flex flex-col space-y-4 text-[#F5F5F5]/80 font-medium">
-              <a href={SITE_DATA.contact.instagram} target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 hover:text-white transition-colors w-fit group">
-                {/* Ícone de @ para representar a rede social com elegância */}
-                <span class="material-symbols-outlined text-[#c9a96e] text-xl group-hover:text-white transition-colors">alternate_email</span>
+          <div class="md:col-span-3 flex flex-col items-center md:items-start space-y-4 md:space-y-6">
+            <h4 class="font-headline text-[#c9a96e] text-lg md:text-xl italic">Acompanhe</h4>
+            <div class="flex flex-col space-y-4 text-[#F5F5F5]/80 font-medium text-sm md:text-base">
+              <a href={SITE_DATA.contact.instagram} target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 md:gap-3 hover:text-white transition-colors w-fit group">
+                <span class="material-symbols-outlined text-[#c9a96e] text-lg md:text-xl group-hover:text-white transition-colors">alternate_email</span>
                 Instagram
               </a>
             </div>
@@ -419,13 +393,11 @@ connection: {
 
         </div>
 
-        {/* Linha Divisória */}
-        <div class="w-full h-px bg-[#c9a96e]/20 mb-8"></div>
+        <div class="w-full h-px bg-[#c9a96e]/20 mb-6 md:mb-8"></div>
         
-        {/* Base do Rodapé (Copyright e Links Legais) */}
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-[#F5F5F5]/40 text-[0.7rem] uppercase tracking-[0.1em] font-body">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 text-[#F5F5F5]/40 text-[0.65rem] md:text-[0.7rem] uppercase tracking-[0.1em] font-body text-center">
           <p>© {new Date().getFullYear()} ANTONIO CARLOS ROSA ADVOCACIA. TODOS OS DIREITOS RESERVADOS.</p>
-          <div class="flex gap-6">
+          <div class="flex gap-4 md:gap-6">
             <a href="#" class="hover:text-[#F5F5F5] transition-colors">Política de Privacidade</a>
             <a href="#" class="hover:text-[#F5F5F5] transition-colors">Aviso Legal</a>
           </div>
