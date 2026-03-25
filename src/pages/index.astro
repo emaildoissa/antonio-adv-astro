@@ -2,7 +2,7 @@
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 
-// Dados centralizados
+// Dados centralizados.
 const SITE_DATA = {
   contact: {
     whatsapp: "(51) 98431-4898",
@@ -15,20 +15,20 @@ const SITE_DATA = {
     tagline: "Advocacia Trabalhista e Previdenciária",
     titleStart: "O seu trabalho tem valor. ",
     titleHighlight: "O seu futuro tem amparo.",
-    description: "Da defesa incansável dos seus direitos no ambiente corporativo ao planejamento cirúrgico da sua aposentadoria. Nossa precisão técnica protege cada etapa da sua vida profissional."
+    description: "Da defesa incansável dos seus direitos no ambiente corporativo ao planeamento cirúrgico da sua aposentadoria. A nossa precisão técnica protege cada etapa da sua vida profissional."
   },
   connection: {
     titleStart: "A omissão que ",
     titleHighlight: "custa caro.",
     previdenciario: {
       title: "No Direito Previdenciário",
-      text: "O sistema brasileiro é um labirinto de normas e prazos. Cada mês de indecisão ou erro processual não é apenas uma falha técnica — é uma fração da sua vida, e do seu patrimônio, que não retorna."
+      text: "O sistema brasileiro é um labirinto de normas e prazos. Cada mês de indecisão ou erro processual não é apenas uma falha técnica — é uma fração da sua vida, e do seu património, que não retorna."
     },
     trabalhista: {
       title: "No Direito Trabalhista",
       text: "Relações corporativas muitas vezes ocultam violações silenciosas. Cada hora extra não paga, assédio tolerado ou desvio de função não é um mero contratempo — é a desvalorização direta da sua força e saúde."
     },
-    conclusion: "Não tratamos processos como números, mas como o resgate da dignidade conquistada em anos de dedicação. Nossa abordagem une o rigor jurídico à sensibilidade de quem sabe exatamente o que está em jogo."
+    conclusion: "Não tratamos processos como números, mas como o resgate da dignidade conquistada em anos de dedicação. A nossa abordagem une o rigor jurídico à sensibilidade de quem sabe exatamente o que está em jogo."
   },
   authority: [
     { value: "15", label: "Anos de dedicação exclusiva ao direito previdenciário" },
@@ -36,20 +36,20 @@ const SITE_DATA = {
   ],
   testimonials: [
     {
-      text: '"A precisão técnica e o atendimento humanizado fizeram toda a diferença no meu planejamento. Sinto que meu futuro está finalmente em boas mãos."',
+      text: '"A precisão técnica e o atendimento humanizado fizeram toda a diferença no meu planeamento. Sinto que o meu futuro está finalmente em boas mãos."',
       author: "Dr. Ricardo Menezes",
       role: "Médico Cirurgião"
     },
     {
-      text: '"Depois de anos tentando sozinho, a equipe resolveu minha aposentadoria especial em meses. Profissionalismo impecável."',
+      text: '"Depois de anos a tentar sozinho, a equipa resolveu a minha aposentadoria especial em meses. Profissionalismo impecável."',
       author: "Beatriz Albuquerque",
       role: "Engenheira Química"
     }
   ],
   cta: {
-    titleStart: "Garanta o seu ",
-    titleHighlight: "descanso hoje.",
-    description: "Agende uma análise criteriosa da sua situação previdenciária e descubra o caminho mais curto para a sua segurança financeira."
+    titleStart: "Proteja o seu trabalho, ",
+    titleHighlight: "garanta o seu futuro.",
+    description: "Agende uma análise criteriosa da sua situação trabalhista e previdenciária. A nossa equipa está pronta para defender os seus direitos hoje e blindar a sua aposentadoria amanhã."
   }
 };
 ---
@@ -59,38 +59,61 @@ const SITE_DATA = {
   description="Proteja o seu futuro com a precisão técnica de quem entende que cada segundo de trabalho merece o amparo da lei."
 >
   <main class="min-h-screen">
+    
+    {/* MOBILE NAV MENU */}
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0B0B0B]/98 backdrop-blur-lg z-[100] flex-col items-center justify-center p-8 space-y-12 transition-all duration-500 ease-in-out transform translate-x-full hidden md:!hidden">
+      
+      {/* Botão de Fechar */}
+      <button id="mobile-menu-close" class="absolute top-6 right-6 text-white material-symbols-outlined text-4xl hover:text-[#c9a96e] transition-colors p-2" aria-label="Fechar Menu">
+        close
+      </button>
+
+      {/* Links de Navegação Mobile */}
+      <div class="flex flex-col items-center gap-12">
+        <a class="text-[#c9a96e] font-headline text-3xl tracking-tight hover:text-white transition-colors" href="#areas">Áreas de Atuação</a>
+		<a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#home">Home</a>
+        {/* <a class="text-[#c9a96e] font-headline text-3xl tracking-tight hover:text-white transition-colors" href="#authority">Autoridade</a>
+        <a class="text-[#c9a96e] font-headline text-3xl tracking-tight hover:text-white transition-colors" href="#testimonials">Depoimentos</a>*/}
+        <a class="text-[#c9a96e] font-headline text-3xl tracking-tight hover:text-white transition-colors" href="#contact">Falar com Advogado</a>
+      </div>
+    </div>
+
     {/* HEADER PREMIUM ESCURO */}
     <header class="bg-[#000000] backdrop-blur-xl border-b border-[#c9a96e]/20 top-0 sticky z-50 w-full transition-all">
       <nav class="flex justify-between items-center w-full px-6 md:px-8 py-4 md:py-5 max-w-screen-2xl mx-auto">
         <div class="flex items-center">
-          <img src="/logo.png" alt="Antonio Carlos Rosa Advocacia" class="h-10 md:h-24 w-auto object-contain" />
+          <img src="/logo.png" alt="Antonio Carlos Rosa Advocacia" class="h-14 md:h-24 w-auto object-contain" />
           <span class="sr-only">Antonio Carlos Rosa Advocacia</span>
         </div>
 
         <div class="hidden md:flex items-center space-x-12">
+		<a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#home">Home</a>
           <a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#areas">Áreas</a>
-          <a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#authority">Autoridade</a>
-          <a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#testimonials">Depoimentos</a>
+          {/* <a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#authority">Autoridade</a>
+          <a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#testimonials">Depoimentos</a> */}
         </div>
 
-        {/* AJUSTE MOBILE: Botão mais compacto no celular */}
-        <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-4 md:px-7 py-2.5 md:py-3 font-bold rounded-full flex items-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-xs md:text-sm uppercase tracking-wide">
-          <span class="material-symbols-outlined text-lg md:text-xl">check_circle</span>
-          <span class="hidden sm:inline">WhatsApp</span>
-          <span class="sm:hidden">Falar</span>
-        </a>
+        <div class="flex items-center gap-4">
+          <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-4 md:px-7 py-2.5 md:py-3 font-bold rounded-full flex items-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-xs md:text-sm uppercase tracking-wide">
+            <span class="material-symbols-outlined text-lg md:text-xl">check_circle</span>
+            <span class="hidden sm:inline">WhatsApp</span>
+            <span class="sm:hidden">Falar</span>
+          </a>
+
+          <button id="mobile-menu-toggle" class="flex md:!hidden items-center justify-center text-white material-symbols-outlined text-3xl hover:text-[#c9a96e] transition-colors p-2 -mr-2" aria-label="Abrir Menu">
+            menu
+          </button>
+        </div>
       </nav>
     </header>
 
     {/* HERO SECTION */}
-    {/* AJUSTE MOBILE: min-h e paddings ajustados */}
     <section class="relative min-h-[85vh] md:min-h-[921px] flex items-center overflow-hidden pt-16 md:pt-12 pb-16 md:pb-0">
       <div class="max-w-screen-2xl mx-auto px-6 md:px-8 w-full grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
         <div class="md:col-span-7 z-10 text-center md:text-left mt-8 md:mt-0">
           <span class="text-xs md:text-base uppercase tracking-[0.2em] text-primary mb-4 md:mb-6 block font-medium">
             {SITE_DATA.hero.tagline}
           </span>
-          {/* AJUSTE MOBILE: Tamanho da fonte menor no celular (text-4xl) */}
           <h1 class="font-headline text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-6 md:mb-8 tracking-tight text-[#1a1c1c]">
             {SITE_DATA.hero.titleStart}
             <span class="italic font-normal">{SITE_DATA.hero.titleHighlight}</span>
@@ -154,27 +177,6 @@ const SITE_DATA = {
       </div>
     </section>
 
-    {/* AUTHORITY SECTION */}
-    <section class="py-20 md:py-40 bg-[#0B0B0B] text-[#f9f9f9]" id="authority">
-         {/* <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 items-center text-center md:text-left">
-          
-          <div class="md:col-span-1 border-b md:border-b-0 md:border-r border-primary-container/20 pb-10 md:pb-0 md:pr-8">
-            <div class="text-6xl md:text-7xl font-headline text-primary-container mb-4">{SITE_DATA.authority[0].value}</div>
-            <p class="text-xs md:text-sm uppercase tracking-[0.2em] text-[#e2e2e2] leading-relaxed">{SITE_DATA.authority[0].label}</p>
-          </div>
-          <div class="md:col-span-1 border-b md:border-b-0 md:border-r border-primary-container/20 pb-10 md:pb-0 md:px-8">
-            <div class="text-6xl md:text-7xl font-headline text-primary-container mb-4">{SITE_DATA.authority[1].value}</div>
-            <p class="text-xs md:text-sm uppercase tracking-[0.2em] text-[#e2e2e2] leading-relaxed">{SITE_DATA.authority[1].label}</p>
-          </div>
-          <div class="md:col-span-1 md:pl-12 pt-4 md:pt-0">
-            <h3 class="font-headline text-2xl md:text-3xl mb-4 md:mb-6 italic">Autoridade que se traduz em resultados reais.</h3>
-            <p class="text-[#e2e2e2]/60 font-light text-sm md:text-base">Atuação estratégica focada em casos complexos e planejamento previdenciário de alto valor.</p>
-          </div>
-        </div>
-      </div> */}
-    </section>
-
     {/* BENTO GRID SECTION */}
     <section class="py-20 md:py-40" id="areas">
       <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
@@ -234,7 +236,7 @@ const SITE_DATA = {
             <div class="space-y-4 md:space-y-6">
               <div class="w-10 md:w-12 h-1 bg-[#c9a96e]"></div>
               <h3 class="font-headline text-2xl md:text-3xl italic">Aposentadoria</h3>
-              <p class="text-white/80 leading-relaxed font-light text-sm">Planejando o legado da sua jornada profissional através de consultoria estratégica.</p>
+              <p class="text-white/80 leading-relaxed font-light text-sm">Planeando o legado da sua jornada profissional através de consultoria estratégica.</p>
             </div>
             <div class="mt-8 relative h-48 md:h-64 overflow-hidden rounded-sm">
               <img alt="Aposentadoria" class="w-full h-full object-cover opacity-40 group-hover:opacity-80 grayscale transition-opacity duration-500" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80"/>
@@ -246,7 +248,7 @@ const SITE_DATA = {
           <div class="md:col-span-4 md:row-span-2 bg-white p-6 md:p-8 flex flex-col justify-center border-l-4 border-l-primary shadow-sm rounded-sm">
             <span class="material-symbols-outlined text-primary mb-3 md:mb-4 text-2xl md:text-3xl">family_restroom</span>
             <h3 class="font-headline text-xl md:text-2xl text-[#1a1c1c] mb-2 md:mb-3">Pensão por Morte</h3>
-            <p class="text-[#5f5e5e] text-xs md:text-sm leading-relaxed">Proteção essencial para o núcleo familiar durante períodos de transição e luto.</p>
+            <p class="text-[#5f5e5e] text-xs md:text-sm leading-relaxed">Proteção essencial para o núcleo familiar durante períodos de luto e transição.</p>
             <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="mt-4 md:mt-6 material-symbols-outlined text-primary hover:text-[#c9a96e] transition-colors self-start">add_circle</a>
           </div>
 
@@ -263,7 +265,6 @@ const SITE_DATA = {
             </div>
           </a>
 
-          {/* AJUSTE MOBILE: flex-col no celular para a imagem não esmagar o texto */}
           <div class="md:col-span-5 md:row-span-2 bg-white flex flex-col md:flex-row overflow-hidden shadow-sm rounded-sm border border-outline-variant/30">
             <div class="w-full md:w-2/5 h-48 md:h-full">
               <img alt="Doença Ocupacional" class="w-full h-full object-cover grayscale" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80"/>
@@ -302,50 +303,31 @@ const SITE_DATA = {
       </div>
     </section>
 
-    {/* TESTIMONIALS SECTION */}
-    <section class="py-20 md:py-40 bg-surface-container" id="testimonials">
-      {/*  <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-          <div class="md:col-span-4 text-center md:text-left">
-            <h2 class="font-headline text-3xl md:text-4xl text-[#1a1c1c] mb-6 md:mb-8">Palavras de quem <span class="italic font-headline">confiou</span> seu tempo a nós.</h2>
-            <div class="w-12 h-1 bg-outline-variant mx-auto md:mx-0 mb-8 md:hidden"></div>
-          </div>
-          <div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-            {SITE_DATA.testimonials.map((testimonial) => (
-              <div class="space-y-4 md:space-y-6 text-center md:text-left">
-                <p class="font-headline text-lg md:text-xl italic text-on-surface-variant leading-relaxed">
-                  {testimonial.text}
-                </p>
-                <div class="pt-4 border-t border-outline-variant w-12 mx-auto md:mx-0"></div>
-                <p class="text-xs md:text-sm uppercase tracking-widest text-primary font-semibold">
-                  {testimonial.author} <br class="sm:hidden" /> <span class="font-light text-[#1a1c1c]/60 italic lowercase sm:before:content-['—_']">{testimonial.role}</span>
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
-    </section>
+    {/* CTA SECTION - FAIXA FULL-WIDTH */}
+    <section class="py-20 md:py-32 bg-[#0B0B0B] relative overflow-hidden" id="contact">
+      {/* Elementos decorativos no fundo */}
+      <div class="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-[#c9a96e]/10 -mr-24 md:-mr-32 -mt-24 md:-mt-32 rotate-45 pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 w-40 md:w-64 h-40 md:h-64 bg-[#c9a96e]/5 -ml-16 md:-ml-24 -mb-16 md:-mb-24 rotate-45 pointer-events-none"></div>
 
-    {/* CTA SECTION */}
-    <section class="py-20 md:py-40 relative" id="contact">
-      <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
-        <div class="bg-[#0B0B0B] p-8 md:p-24 relative overflow-hidden rounded-sm shadow-md text-center md:text-left">
-          <div class="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 bg-primary/10 -mr-24 md:-mr-32 -mt-24 md:-mt-32 rotate-45"></div>
-          <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-12">
-            <div class="max-w-2xl">
-              <h2 class="font-headline text-3xl md:text-6xl text-[#f9f9f9] mb-4 md:mb-6">
-                {SITE_DATA.cta.titleStart} <span class="text-primary-container italic font-headline">{SITE_DATA.cta.titleHighlight}</span>
-              </h2>
-              <p class="text-[#e2e2e2]/70 text-base md:text-xl font-light mb-6 md:mb-8">
-                {SITE_DATA.cta.description}
-              </p>
-              <a href={SITE_DATA.contact.emailLink} class="text-primary-container text-base md:text-xl flex items-center justify-center md:justify-start gap-3 hover:text-white transition-colors font-medium">
+      <div class="max-w-screen-2xl mx-auto px-6 md:px-8 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
+          <div class="max-w-3xl text-center lg:text-left">
+            <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl text-[#f9f9f9] mb-6">
+              {SITE_DATA.cta.titleStart} <span class="text-primary-container italic font-headline block md:inline mt-2 md:mt-0">{SITE_DATA.cta.titleHighlight}</span>
+            </h2>
+            <p class="text-[#e2e2e2]/80 text-lg md:text-xl font-light mb-8 md:mb-10 leading-relaxed">
+              {SITE_DATA.cta.description}
+            </p>
+            <div class="flex items-center justify-center lg:justify-start gap-4">
+              <a href={SITE_DATA.contact.emailLink} class="text-primary-container text-base md:text-lg flex items-center gap-3 hover:text-white transition-colors font-medium">
                 <span class="material-symbols-outlined text-xl md:text-2xl">mail</span>
                 <span class="truncate">{SITE_DATA.contact.email}</span>
               </a>
             </div>
-            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-8 md:px-12 py-5 md:py-6 text-base md:text-xl font-bold hover:bg-[#20ba5a] transition-all active:scale-95 text-center w-full md:min-w-[300px] flex items-center justify-center gap-3 rounded-sm">
+          </div>
+          
+          <div class="w-full lg:w-auto flex-shrink-0">
+            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-8 md:px-14 py-5 md:py-6 text-base md:text-xl font-bold hover:bg-[#20ba5a] transition-all active:scale-95 text-center w-full flex items-center justify-center gap-3 rounded-sm shadow-lg shadow-[#25D366]/20">
               <span class="material-symbols-outlined text-2xl md:text-3xl">check_circle</span>
               Agendar via WhatsApp
             </a>
@@ -355,7 +337,7 @@ const SITE_DATA = {
     </section>
 
     {/* FOOTER */}
-    <footer class="bg-[#0B0B0B] w-full pt-16 md:pt-20 pb-8 md:pb-10 border-t border-[#c9a96e]/20">
+    <footer class="bg-[#000000] w-full pt-16 md:pt-20 pb-8 md:pb-10 border-t border-[#c9a96e]/20">
       <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
         
         <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-12 md:mb-16 text-center md:text-left">
@@ -407,3 +389,48 @@ const SITE_DATA = {
     </footer>
   </main>
 </Layout>
+
+{/* === SCRIPT PARA O MENU HAMBÚRGUER === */}
+<script>
+  const toggleButton = document.getElementById('mobile-menu-toggle');
+  const closeButton = document.getElementById('mobile-menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const htmlBody = document.querySelector('html');
+
+  if (toggleButton && closeButton && mobileMenu) {
+    
+    function openMobileMenu() {
+      mobileMenu.classList.remove('hidden');
+      mobileMenu.classList.add('flex'); 
+      setTimeout(() => {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+      }, 10);
+      htmlBody.style.overflow = 'hidden'; 
+    }
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('translate-x-0');
+      mobileMenu.classList.add('translate-x-full');
+      setTimeout(() => {
+        mobileMenu.classList.remove('flex'); 
+        mobileMenu.classList.add('hidden');  
+      }, 500);
+      htmlBody.style.overflow = ''; 
+    }
+
+    toggleButton.addEventListener('click', openMobileMenu);
+    closeButton.addEventListener('click', closeMobileMenu);
+
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768 && !mobileMenu.classList.contains('hidden')) {
+        closeMobileMenu();
+      }
+    });
+  }
+</script>
