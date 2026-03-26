@@ -62,18 +62,13 @@ const SITE_DATA = {
     
     {/* MOBILE NAV MENU */}
     <div id="mobile-menu" class="fixed inset-0 bg-[#0B0B0B]/98 backdrop-blur-lg z-[100] flex-col items-center justify-center p-8 space-y-12 transition-all duration-500 ease-in-out transform translate-x-full hidden md:!hidden">
-      
-      {/* Botão de Fechar */}
       <button id="mobile-menu-close" class="absolute top-6 right-6 text-white material-symbols-outlined text-4xl hover:text-[#c9a96e] transition-colors p-2" aria-label="Fechar Menu">
         close
       </button>
 
-      {/* Links de Navegação Mobile */}
       <div class="flex flex-col items-center gap-12">
+        <a class="text-[#c9a96e] font-headline text-3xl tracking-tight hover:text-white transition-colors" href="#home">Home</a>
         <a class="text-[#c9a96e] font-headline text-3xl tracking-tight hover:text-white transition-colors" href="#areas">Áreas de Atuação</a>
-		<a class="text-[#c9a96e] font-headline text-3xl tracking-tight hover:text-white transition-colors" href="#home">Home</a>
-        {/* <a class="text-[#c9a96e] font-headline text-3xl tracking-tight hover:text-white transition-colors" href="#authority">Autoridade</a>
-        <a class="text-[#c9a96e] font-headline text-3xl tracking-tight hover:text-white transition-colors" href="#testimonials">Depoimentos</a>*/}
         <a class="text-[#c9a96e] font-headline text-3xl tracking-tight hover:text-white transition-colors" href="#contact">Falar com Advogado</a>
       </div>
     </div>
@@ -87,10 +82,8 @@ const SITE_DATA = {
         </div>
 
         <div class="hidden md:flex items-center space-x-12">
-		<a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#home">Home</a>
+          <a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#home">Home</a>
           <a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#areas">Áreas</a>
-          {/* <a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#authority">Autoridade</a>
-          <a class="text-[#F5F5F5]/70 hover:text-primary-container transition-colors font-headline text-lg tracking-tight" href="#testimonials">Depoimentos</a> */}
         </div>
 
         <div class="flex items-center gap-4">
@@ -108,7 +101,7 @@ const SITE_DATA = {
     </header>
 
     {/* HERO SECTION */}
-    <section class="relative min-h-[85vh] md:min-h-[921px] flex items-center overflow-hidden pt-16 md:pt-12 pb-16 md:pb-0">
+    <section id="home" class="relative min-h-[85vh] md:min-h-[921px] flex items-center overflow-hidden pt-16 md:pt-12 pb-16 md:pb-0">
       <div class="max-w-screen-2xl mx-auto px-6 md:px-8 w-full grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center">
         <div class="md:col-span-7 z-10 text-center md:text-left mt-8 md:mt-0">
           <span class="text-xs md:text-base uppercase tracking-[0.2em] text-primary mb-4 md:mb-6 block font-medium">
@@ -122,7 +115,7 @@ const SITE_DATA = {
             {SITE_DATA.hero.description}
           </p>
           <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center md:justify-start">
-            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-primary text-white px-8 md:px-10 py-4 md:py-5 text-base md:text-lg font-medium inline-flex items-center justify-center gap-3 hover:bg-primary-container transition-all group rounded-sm w-full sm:w-auto">
+            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-primary text-white px-8 md:px-10 py-4 md:py-5 text-base md:text-lg font-medium inline-flex items-center justify-center gap-3 hover:bg-primary-container transition-all group rounded-sm w-full sm:w-auto shadow-lg shadow-primary/20">
               <span class="material-symbols-outlined text-2xl text-[#25D366]">check_circle</span>
               Falar com Especialista
               <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform hidden md:inline">arrow_right_alt</span>
@@ -177,7 +170,7 @@ const SITE_DATA = {
       </div>
     </section>
 
-    {/* BENTO GRID SECTION */}
+    {/* BENTO GRID SECTION (3 FOTOS / 3 CORES SÓLIDAS) */}
     <section class="py-20 md:py-40" id="areas">
       <div class="max-w-screen-2xl mx-auto px-6 md:px-8">
         
@@ -196,6 +189,7 @@ const SITE_DATA = {
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[minmax(180px,auto)] md:grid-flow-dense">
           
+          {/* 1. Seguro Desemprego (FOTO) */}
           <div class="md:col-span-8 md:row-span-3 bg-[#0B0B0B] relative overflow-hidden group rounded-sm shadow-sm flex flex-col justify-end cursor-pointer min-h-[350px] md:min-h-0">
             <div class="absolute inset-0 z-0 transition-all duration-700 group-hover:scale-105 group-hover:opacity-20">
               <img alt="Seguro Desemprego" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80"/>
@@ -206,8 +200,9 @@ const SITE_DATA = {
               <span class="text-[0.65rem] md:text-xs uppercase tracking-[0.2em] text-[#c9a96e] mb-2 font-bold block">Direito Trabalhista</span>
               <h3 class="font-headline text-3xl md:text-4xl mb-3 md:mb-4 italic text-white">Seguro Desemprego</h3>
               <p class="max-w-md text-[#e2e2e2] font-light leading-relaxed mb-6 text-sm md:text-base">Orientação profissional para garantir sua transição com dignidade e segurança jurídica.</p>
-              <div class="flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-[#c9a96e] group-hover:gap-4 transition-all w-fit">
-                Consultar Especialista <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              
+              <div class="flex items-center gap-1.5 text-[0.65rem] md:text-xs uppercase tracking-widest font-bold text-[#c9a96e] group-hover:text-white transition-colors mt-auto w-fit">
+                <span class="material-symbols-outlined text-sm md:text-base">touch_app</span> Veja mais
               </div>
             </div>
 
@@ -225,78 +220,195 @@ const SITE_DATA = {
                 <p class="hidden sm:block">O objetivo é prover manutenção digna enquanto você foca na busca por uma nova recolocação profissional no mercado.</p>
               </div>
 
-              <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-5 md:px-7 py-2.5 md:py-3 font-bold rounded-sm flex items-center justify-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-[0.7rem] md:text-sm uppercase tracking-wide w-full md:w-fit mt-6 md:mt-10">
-                <span class="material-symbols-outlined text-lg md:text-xl">check_circle</span>
-                Falar com Especialista
+              <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-5 py-2.5 font-bold rounded-sm flex items-center justify-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-[0.65rem] md:text-xs uppercase tracking-wide w-fit mt-6 md:mt-10 shadow-lg shadow-[#25D366]/20">
+                <span class="material-symbols-outlined text-base">check_circle</span> Falar com Advogado
               </a>
             </div>
           </div>
 
-          <div class="md:col-span-4 md:row-span-4 bg-primary text-white p-6 md:p-8 flex flex-col justify-between group rounded-sm shadow-sm min-h-[400px]">
-            <div class="space-y-4 md:space-y-6">
-              <div class="w-10 md:w-12 h-1 bg-[#c9a96e]"></div>
-              <h3 class="font-headline text-2xl md:text-3xl italic">Aposentadoria</h3>
-              <p class="text-white/80 leading-relaxed font-light text-sm">Planeando o legado da sua jornada profissional através de consultoria estratégica.</p>
-            </div>
-            <div class="mt-8 relative h-48 md:h-64 overflow-hidden rounded-sm">
-              <img alt="Aposentadoria" class="w-full h-full object-cover opacity-40 group-hover:opacity-80 grayscale transition-opacity duration-500" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80"/>
-              <div class="absolute inset-0 border border-white/10"></div>
-            </div>
-            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="mt-6 text-[0.65rem] md:text-xs uppercase tracking-[0.2em] text-[#c9a96e] border-b border-[#c9a96e]/30 self-start pb-1 hover:text-white transition-colors">Ver Estratégias</a>
-          </div>
-
-          <div class="md:col-span-4 md:row-span-2 bg-white p-6 md:p-8 flex flex-col justify-center border-l-4 border-l-primary shadow-sm rounded-sm">
-            <span class="material-symbols-outlined text-primary mb-3 md:mb-4 text-2xl md:text-3xl">family_restroom</span>
-            <h3 class="font-headline text-xl md:text-2xl text-[#1a1c1c] mb-2 md:mb-3">Pensão por Morte</h3>
-            <p class="text-[#5f5e5e] text-xs md:text-sm leading-relaxed">Proteção essencial para o núcleo familiar durante períodos de luto e transição.</p>
-            <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="mt-4 md:mt-6 material-symbols-outlined text-primary hover:text-[#c9a96e] transition-colors self-start">add_circle</a>
-          </div>
-
-          <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="md:col-span-4 md:row-span-2 bg-[#0B0B0B] text-white p-6 md:p-8 flex flex-col justify-between group cursor-pointer rounded-sm shadow-sm hover:bg-[#1a1c1c] transition-colors">
-            <div>
-              <h3 class="font-headline text-xl md:text-2xl mb-2 md:mb-3 text-white">Assédio no Trabalho</h3>
-              <p class="text-[#e2e2e2]/80 text-xs md:text-sm leading-relaxed">Preservando a dignidade e a saúde mental no ambiente profissional.</p>
-            </div>
-            <div class="flex items-center justify-between mt-6">
-              <span class="text-[0.6rem] md:text-[0.65rem] uppercase tracking-widest text-[#ba1a1a] font-bold flex items-center gap-1 bg-white/10 px-2 py-1 rounded">
-                <span class="material-symbols-outlined text-xs md:text-sm">priority_high</span> Advocacia Urgente
-              </span>
-              <span class="material-symbols-outlined text-[#c9a96e] group-hover:translate-x-1 transition-transform">east</span>
-            </div>
-          </a>
-
-          <div class="md:col-span-5 md:row-span-2 bg-white flex flex-col md:flex-row overflow-hidden shadow-sm rounded-sm border border-outline-variant/30">
-            <div class="w-full md:w-2/5 h-48 md:h-full">
-              <img alt="Doença Ocupacional" class="w-full h-full object-cover grayscale" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80"/>
-            </div>
-            <div class="w-full md:w-3/5 p-6 md:p-8 flex flex-col justify-center">
-              <h3 class="font-headline text-xl md:text-2xl text-[#1a1c1c] mb-2">Doença Ocupacional</h3>
-              <p class="text-[#5f5e5e] text-xs md:text-sm leading-relaxed">Suporte legal para recuperação da saúde e reconhecimento de direitos.</p>
-              <div class="mt-4 flex gap-2">
-                <span class="bg-[#f3f3f3] text-primary px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-tighter">Direito à Saúde</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="md:col-span-3 md:row-span-2 bg-[#c9a96e] relative overflow-hidden group rounded-sm shadow-sm flex flex-col justify-between cursor-pointer min-h-[200px]">
-            <div class="p-6 md:p-8 h-full flex flex-col justify-between transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
+          {/* 2. Aposentadoria (SÓLIDO PRETO) */}
+          <div class="md:col-span-4 md:row-span-3 bg-[#0B0B0B] relative overflow-hidden group rounded-sm shadow-sm flex flex-col justify-between cursor-pointer min-h-[350px]">
+            <div class="relative z-20 p-6 md:p-8 h-full flex flex-col justify-between transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
               <div>
-                <div class="h-1 w-full bg-[#0B0B0B]/20"></div>
-                <h3 class="font-headline text-xl md:text-2xl text-[#0B0B0B] mb-2 mt-4">Desvio de Função</h3>
-                <p class="text-[#0B0B0B]/80 text-[0.65rem] md:text-xs leading-relaxed uppercase tracking-wider italic font-medium">Garantindo o alinhamento de funções.</p>
+                <div class="w-10 md:w-12 h-1 bg-[#c9a96e] mb-6"></div>
+                <h3 class="font-headline text-2xl md:text-3xl italic text-white mb-3">Aposentadoria por Invalidez</h3>
+                <p class="text-[#e2e2e2]/80 leading-relaxed font-light text-sm">Amparo definitivo para segurados com incapacidade total e permanente para o trabalho.</p>
               </div>
-              <div class="text-[#0B0B0B]/20 text-4xl md:text-5xl font-headline text-right italic font-bold mt-2">06</div>
+              
+              <div class="flex items-center gap-1.5 text-[0.65rem] md:text-xs uppercase tracking-widest font-bold text-[#c9a96e] group-hover:text-white transition-colors mt-auto w-fit">
+                <span class="material-symbols-outlined text-sm md:text-base">touch_app</span> Veja mais
+              </div>
             </div>
 
-            <div class="absolute inset-0 bg-[#0B0B0B] text-white p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-10 flex flex-col justify-center">
-              <span class="text-[#c9a96e] font-headline text-base md:text-lg mb-2 md:mb-3">O que diz a Lei?</span>
-              <div class="space-y-2 md:space-y-3 font-light text-[0.75rem] md:text-[0.8rem] leading-relaxed text-[#e2e2e2]">
-                <div class="pl-2 md:pl-3 border-l-2 border-[#c9a96e] text-[#c9a96e] italic">
-                  “É vedada à contratante a utilização dos trabalhadores em atividades distintas daquelas que foram objeto do contrato”
-                </div>
-                <p>A prática (Art. 468, CLT) é ilegal e pode gerar <strong class="text-white font-medium">indenização.</strong></p>
+            <div class="absolute inset-0 text-white p-6 md:p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-30 flex flex-col justify-center bg-[#1a1c1c]">
+              <span class="text-[#c9a96e] font-headline text-xl md:text-2xl mb-3 flex items-center gap-2">
+                 <span class="material-symbols-outlined text-lg">health_and_safety</span> Incapacidade Permanente
+              </span>
+              
+              <p class="text-[0.7rem] md:text-[0.75rem] text-[#e2e2e2]/80 mb-5 font-light leading-relaxed">
+                Benefício concedido quando não há possibilidade de reabilitação. Principais doenças que dão direito:
+              </p>
+              
+              <ul class="space-y-3 font-light text-[0.7rem] md:text-[0.75rem] leading-relaxed text-[#e2e2e2] border-l-2 border-[#c9a96e] pl-3 mb-6">
+                <li><strong class="text-white font-medium block mb-0.5">Mentais e Neurológicas:</strong> Alienação mental, Parkinson e Esclerose.</li>
+                <li><strong class="text-white font-medium block mb-0.5">Órgãos Vitais:</strong> Cardiopatia grave e Nefropatias (rins).</li>
+                <li><strong class="text-white font-medium block mb-0.5">Físicas/Infecciosas:</strong> Cegueira, Paralisia, Tuberculose e Hanseníase.</li>
+              </ul>
+
+              <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-5 py-2.5 font-bold rounded-sm flex items-center justify-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-[0.65rem] md:text-xs uppercase tracking-wide w-fit mt-auto shadow-lg shadow-[#25D366]/20">
+                <span class="material-symbols-outlined text-base">check_circle</span> Falar com Advogado
+              </a>
+            </div>
+          </div>
+
+         {/* 3. Pensão por Morte (FOTO) */}
+          <div class="md:col-span-4 md:row-span-3 relative overflow-hidden group rounded-sm shadow-sm flex flex-col justify-between cursor-pointer min-h-[300px]">
+            <div class="absolute inset-0 z-0 transition-all duration-700 group-hover:scale-105 group-hover:opacity-20">
+              <img alt="Pensão por Morte" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="/pensao.jpeg"/>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/95 via-[#0B0B0B]/70 to-transparent z-10 transition-colors duration-500 group-hover:bg-[#0B0B0B]/98"></div>
+
+            <div class="relative z-20 p-6 md:p-8 h-full flex flex-col justify-between transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
+              <div>
+                <span class="material-symbols-outlined text-[#c9a96e] mb-3 md:mb-4 text-2xl md:text-3xl">family_restroom</span>
+                <h3 class="font-headline text-xl md:text-2xl mb-2 text-white">Pensão por Morte</h3>
+                <p class="text-[#e2e2e2]/80 text-xs md:text-sm leading-relaxed">Amparo financeiro para os dependentes em momentos de luto.</p>
+              </div>
+              
+              <div class="flex items-center gap-1.5 text-[0.65rem] md:text-xs uppercase tracking-widest font-bold text-[#c9a96e] group-hover:text-white transition-colors mt-auto w-fit">
+                <span class="material-symbols-outlined text-sm md:text-base">touch_app</span> Veja mais
               </div>
             </div>
+
+            <div class="absolute inset-0 text-white p-6 md:p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-30 flex flex-col justify-center bg-[#0B0B0B]/90">
+              <span class="text-[#c9a96e] font-headline text-base md:text-lg mb-3 flex items-center gap-2">
+                 <span class="material-symbols-outlined text-sm">info</span> Regras do Benefício
+              </span>
+              
+              <ul class="space-y-2.5 font-light text-[0.7rem] md:text-[0.75rem] leading-relaxed text-[#e2e2e2] border-l-2 border-[#c9a96e] pl-3 mb-5">
+                <li><strong class="text-white font-medium">Cônjuge/Companheiro:</strong> A dependência económica é absoluta.</li>
+                <li><strong class="text-white font-medium">Filhos/Enteados:</strong> Menores de 21 anos. Sem limite se houver invalidez grave.</li>
+                <li><strong class="text-[#ba1a1a] font-medium">Atenção:</strong> Não se estende até aos 24 anos para universitários.</li>
+              </ul>
+
+              <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-5 py-2.5 font-bold rounded-sm flex items-center justify-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-[0.65rem] md:text-xs uppercase tracking-wide w-fit mt-auto shadow-lg shadow-[#25D366]/20">
+                <span class="material-symbols-outlined text-base">check_circle</span> Falar com Advogado
+              </a>
+            </div>
+          </div>
+
+          {/* 4. Assédio no Trabalho (FOTO) */}
+          <div class="md:col-span-4 md:row-span-3 relative overflow-hidden group rounded-sm shadow-sm flex flex-col justify-between cursor-pointer min-h-[300px]">
+            <div class="absolute inset-0 z-0 transition-all duration-700 group-hover:scale-105 group-hover:opacity-20">
+              <img alt="Assédio no Trabalho" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="/assedio.jpg"/>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/95 via-[#0B0B0B]/70 to-transparent z-10 transition-colors duration-500 group-hover:bg-[#0B0B0B]/98"></div>
+
+            <div class="relative z-20 p-6 md:p-8 h-full flex flex-col justify-between transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
+              <div>
+                <div class="inline-block text-[0.6rem] md:text-[0.65rem] uppercase tracking-widest text-[#ba1a1a] font-bold bg-white/10 px-2 py-1 rounded mb-3">
+                  <span class="material-symbols-outlined text-[10px] align-middle mr-1">priority_high</span> Urgente
+                </div>
+                <h3 class="font-headline text-xl md:text-2xl mb-2 md:mb-3 text-white">Assédio no Trabalho</h3>
+                <p class="text-[#e2e2e2]/80 text-xs md:text-sm leading-relaxed">Preservando a dignidade e a saúde mental no ambiente profissional.</p>
+              </div>
+              <div class="flex items-center gap-1.5 text-[0.65rem] md:text-xs uppercase tracking-widest font-bold text-[#c9a96e] group-hover:text-white transition-colors mt-auto w-fit">
+                <span class="material-symbols-outlined text-sm md:text-base">touch_app</span> Veja mais
+              </div>
+            </div>
+
+            <div class="absolute inset-0 text-white p-6 md:p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-30 flex flex-col justify-center bg-[#0B0B0B]/90">
+              <span class="text-[#ba1a1a] font-headline text-base md:text-lg mb-2 flex items-center gap-2">
+                 <span class="material-symbols-outlined text-sm">gavel</span> O seu direito ao respeito
+              </span>
+              
+              <p class="text-[0.65rem] md:text-[0.75rem] text-[#e2e2e2]/70 mb-3 font-light">
+                Um ambiente saudável é dever da empresa. Identifique as infrações:
+              </p>
+              
+              <ul class="space-y-2 font-light text-[0.7rem] md:text-[0.8rem] leading-relaxed text-[#e2e2e2] border-l-2 border-[#ba1a1a] pl-3 mb-5">
+                <li><strong class="text-white font-medium">Moral:</strong> Perseguição e humilhações repetitivas.</li>
+                <li><strong class="text-white font-medium">Organizacional:</strong> Pressão abusiva estrutural por metas.</li>
+                <li><strong class="text-white font-medium">Sexual:</strong> Chantagens ou investidas de cariz sexual.</li>
+              </ul>
+
+              <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-5 py-2.5 font-bold rounded-sm flex items-center justify-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-[0.65rem] md:text-xs uppercase tracking-wide w-fit mt-auto shadow-lg shadow-[#25D366]/20">
+                <span class="material-symbols-outlined text-base">check_circle</span> Falar com Advogado
+              </a>
+            </div>
+          </div>
+
+         {/* 5. Doença Ocupacional (SÓLIDO BRANCO) */}
+          <div class="md:col-span-4 md:row-span-3 bg-white relative overflow-hidden group rounded-sm shadow-sm border border-outline-variant/30 flex flex-col justify-between cursor-pointer min-h-[300px]">
+            <div class="relative z-20 p-6 md:p-8 h-full flex flex-col justify-between transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
+              <div>
+                <span class="material-symbols-outlined text-primary mb-3 md:mb-4 text-2xl md:text-3xl">medical_services</span>
+                <h3 class="font-headline text-xl md:text-2xl text-[#1a1c1c] mb-2">Doença Ocupacional</h3>
+                <p class="text-[#5f5e5e] text-xs md:text-sm leading-relaxed mb-4">Suporte legal para recuperação da saúde e reconhecimento de direitos após adoecimento.</p>
+              </div>
+              <div class="flex items-center justify-between mt-auto w-full">
+                <span class="bg-[#f3f3f3] text-primary px-3 py-1 rounded-sm text-[10px] uppercase font-bold tracking-tighter">Direito à Saúde</span>
+                <div class="flex items-center gap-1.5 text-[0.65rem] md:text-xs uppercase tracking-widest font-bold text-[#c9a96e] group-hover:text-primary transition-colors">
+                  <span class="material-symbols-outlined text-sm md:text-base">touch_app</span> Veja mais
+                </div>
+              </div>
+            </div>
+
+            <div class="absolute inset-0 bg-[#0B0B0B] text-white p-6 md:p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-30 flex flex-col justify-center">
+              <span class="text-[#c9a96e] font-headline text-base md:text-lg mb-3 flex items-center gap-2">
+                 <span class="material-symbols-outlined text-sm">medical_services</span> Garantias Legais
+              </span>
+              
+              <p class="text-[0.65rem] md:text-[0.75rem] text-[#e2e2e2]/80 mb-4 font-light leading-relaxed">
+                Seja pelo risco da profissão (ex: <strong class="text-white font-medium">LER/DORT</strong>) ou pelas condições do ambiente, a lei ampara o trabalhador:
+              </p>
+              
+              <ul class="space-y-2 font-light text-[0.7rem] md:text-[0.8rem] leading-relaxed text-[#e2e2e2] border-l-2 border-[#c9a96e] pl-3 mb-5">
+                <li><strong class="text-white font-medium">Tratamento:</strong> Custeio de despesas médicas.</li>
+                <li><strong class="text-white font-medium">Reparação:</strong> Indenização por danos morais/materiais.</li>
+                <li><strong class="text-white font-medium">Sustento:</strong> Pensão vitalícia em casos graves.</li>
+              </ul>
+
+              <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-5 py-2.5 font-bold rounded-sm flex items-center justify-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-[0.65rem] md:text-xs uppercase tracking-wide w-fit mt-auto shadow-lg shadow-[#25D366]/20">
+                <span class="material-symbols-outlined text-base">check_circle</span> Falar com Advogado
+              </a>
+            </div>
+          </div>
+
+          {/* 6. Desvio de Função (SÓLIDO DOURADO) */}
+          <div class="md:col-span-12 md:row-span-2 bg-[#c9a96e] relative overflow-hidden group rounded-sm shadow-sm flex flex-col justify-between cursor-pointer min-h-[200px]">
+            
+            {/* Frente */}
+            <div class="p-6 md:p-10 h-full flex flex-col md:flex-row md:items-center justify-between transition-all duration-500 group-hover:opacity-0 group-hover:-translate-y-4">
+              <div class="max-w-2xl">
+                <div class="h-1 w-16 bg-[#0B0B0B]/20 mb-4"></div>
+                <h3 class="font-headline text-2xl md:text-3xl text-[#0B0B0B] mb-2">Desvio de Função</h3>
+                <p class="text-[#0B0B0B]/80 text-[0.75rem] md:text-sm leading-relaxed uppercase tracking-wider italic font-medium">Garantindo o alinhamento de funções e remuneração justa.</p>
+              </div>
+              <div class="flex flex-col items-start md:items-end gap-4 mt-6 md:mt-0">
+                <div class="text-[#0B0B0B]/20 text-5xl md:text-7xl font-headline italic font-bold hidden md:block">06</div>
+                <div class="flex items-center gap-1.5 text-[0.65rem] md:text-xs uppercase tracking-widest font-bold text-[#0B0B0B] transition-colors">
+                  <span class="material-symbols-outlined text-sm md:text-base">touch_app</span> Veja mais
+                </div>
+              </div>
+            </div>
+
+            {/* Verso */}
+            <div class="absolute inset-0 bg-[#0B0B0B] text-white p-6 md:p-10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+              <div class="max-w-2xl">
+                <span class="text-[#c9a96e] font-headline text-base md:text-xl mb-3 block">O que diz a Lei?</span>
+                <div class="space-y-3 font-light text-[0.8rem] md:text-base leading-relaxed text-[#e2e2e2]">
+                  <div class="pl-4 border-l-2 border-[#c9a96e] text-[#c9a96e] italic">
+                    “É vedada à contratante a utilização dos trabalhadores em atividades distintas daquelas que foram objeto do contrato”
+                  </div>
+                  <p>A prática (Art. 468, CLT) é ilegal e pode gerar <strong class="text-white font-medium">indenização ao empregado.</strong></p>
+                </div>
+              </div>
+              <a href={SITE_DATA.contact.whatsappLink} target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-6 py-4 font-bold rounded-sm flex items-center justify-center gap-2 hover:bg-[#20ba5a] transition-all duration-300 active:scale-95 text-[0.7rem] md:text-sm uppercase tracking-wide w-full md:w-fit shadow-lg shadow-[#25D366]/20 flex-shrink-0">
+                <span class="material-symbols-outlined text-xl">check_circle</span> Falar com Advogado
+              </a>
+            </div>
+            
           </div>
 
         </div>
@@ -305,7 +417,6 @@ const SITE_DATA = {
 
     {/* CTA SECTION - FAIXA FULL-WIDTH */}
     <section class="py-20 md:py-32 bg-[#0B0B0B] relative overflow-hidden" id="contact">
-      {/* Elementos decorativos no fundo */}
       <div class="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-[#c9a96e]/10 -mr-24 md:-mr-32 -mt-24 md:-mt-32 rotate-45 pointer-events-none"></div>
       <div class="absolute bottom-0 left-0 w-40 md:w-64 h-40 md:h-64 bg-[#c9a96e]/5 -ml-16 md:-ml-24 -mb-16 md:-mb-24 rotate-45 pointer-events-none"></div>
 
@@ -383,6 +494,11 @@ const SITE_DATA = {
             <a href="#" class="hover:text-[#F5F5F5] transition-colors">Política de Privacidade</a>
             <a href="#" class="hover:text-[#F5F5F5] transition-colors">Aviso Legal</a>
           </div>
+        </div>
+
+        {/* CRÉDITOS DA SIGEL */}
+        <div class="mt-10 md:mt-12 text-center text-[#F5F5F5]/20 text-[0.55rem] md:text-[0.6rem] uppercase tracking-[0.2em] font-body">
+          Desenvolvido por <a href="https://sigelinformatica.com.br" target="_blank" rel="noopener noreferrer" class="hover:text-[#c9a96e] transition-colors duration-300">Sigel Soluções em Informática</a>
         </div>
 
       </div>
